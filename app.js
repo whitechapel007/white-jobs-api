@@ -22,9 +22,9 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 app.set("trust proxy", 1);
 app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
 
-app.get("/",(req,res)=>{
-  res.send('jobs api')
-})
+app.get("/", (req, res) => {
+  res.send("jobs api");
+});
 app.use(express.json());
 // extra packages
 app.use(helmet());
@@ -41,7 +41,7 @@ const port = process.env.PORT || 3000;
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI).then((res) =>
-      console.log("connected to db")
+      console.log("connected to db nn")
     );
     app.listen(port, () =>
       console.log(`Server is listening on port ${port}...`)
